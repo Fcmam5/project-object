@@ -1,0 +1,54 @@
+{
+  "name": "project-object",
+  "version": "0.0.1",
+  "description": "Return an object with only specified properties",
+  "main": "src/index.js",
+  "directories": {
+    "test": "jest"
+  },
+  "scripts": {
+    "test": "jest",
+    "test.watch": "jest --watch",
+    "test.mutation": "stryker run",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fcmam5/project-object.git"
+  },
+  "keywords": [
+    "object",
+    "pick",
+    "filter",
+    "properties",
+    "keys",
+    "attributes",
+    "javascript"
+  ],
+  "author": "Fortas Abdeldjalil (https://fcmam5.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fcmam5/project-object/issues"
+  },
+  "homepage": "https://github.com/Fcmam5/project-object#readme",
+  "devDependencies": {
+    "@stryker-mutator/core": "^3.3.1",
+    "@stryker-mutator/javascript-mutator": "^3.3.1",
+    "@stryker-mutator/jest-runner": "^3.3.1",
+    "@types/jest": "^26.0.13",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  }
+}

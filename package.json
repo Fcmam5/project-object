@@ -1,6 +1,6 @@
 {
   "name": "project-object",
-  "version": "0.0.1",
+  "version": "0.0.1-pre",
   "description": "Return an object with only specified properties",
   "main": "src/index.js",
   "directories": {

@@ -45,34 +45,32 @@ describe('Project object fields', () => {
     });
 
     it.skip('should return an object with a flattened array of objects', () => {
-      const result = projectObject(anObject, [ 'isHot', 'ingredients.name']);
+      const result = projectObject(anObject, [ 'isHot', 'ingredients.*.name']);
 
       expect(result).toMatchObject({  isHot: true, ingredients: ['tomatoes', 'onions'] });
     });
   });
 
-  describe.skip('objects containing arrays of objects', ()=> {
 
-    it('should return an object with a projected array of objects', () => {
-      const result = projectObject(anObject, ['food', 'ingredients.name', 'ingredients.type']);
+  it('should return an object with a projected array of objects', () => {
+    const result = projectObject(anObject, ['food', 'ingredients.*.name', 'ingredients.*.foo']);
 
-      expect(result).toMatchObject(
-        {
-          food: 'mhajeb',
-          ingredients: [
-            {
-              name: 'tomatoes',
-              foo: 'bar',
-            },
-            {
-              name: 'onions',
-              foo: 'bar2',
-            },
-          ]
-        }
-      );
-    });
-
+    expect(result).toMatchObject(
+      {
+        food: 'mhajeb',
+        ingredients: [
+          {
+            name: 'tomatoes',
+            foo: 'bar',
+          },
+          {
+            name: 'onions',
+            foo: 'bar2',
+          },
+        ]
+      }
+    );
   });
+
 
 });
